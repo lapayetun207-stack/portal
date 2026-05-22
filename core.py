@@ -89,7 +89,7 @@ def fetch_portal():
         b64_url = base64.b64encode(api_url.encode()).decode()
         
         print(f"\n{g}[✓] PORTAL URL အောင်မြင်စွာ ဖမ်းယူရရှိပါပြီ!{w}")
-        print(f"{c}[*] Script ထဲထည့်ရန် API Base64 Code:{w}")
+        print(f"{c}[*] Copy ကူးယူပါ:{w}")
         print(f"{y}-{w}"*50)
         print(f"{g}{b64_url}{w}")
         print(f"{y}-{w}"*50)
