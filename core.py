@@ -5,6 +5,7 @@ import requests
 import base64
 import urllib3
 
+# Warning များကို ပိတ်ထားရန်
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 g = "\033[1;32m"
@@ -86,14 +87,15 @@ def fetch_portal():
         api_url = portal_url.replace("/auth/wifidogAuth/login/?", "/api/auth/wifidog?stage=portal&")
         api_url = api_url.replace("/auth/wifidogAuth/login?", "/api/auth/wifidog?stage=portal&")
         
-        b64_url = base64.b64encode(api_url.encode()).decode()
-        
         print(f"\n{g}[✓] PORTAL URL အောင်မြင်စွာ ဖမ်းယူရရှိပါပြီ!{w}")
-        print(f"{c}[*] Copy ကူးယူပါ:{w}")
+        print(f"{g}[✓] API လမ်းကြောင်းသို့ အလိုအလျောက် ပြောင်းလဲပြီးပါပြီ!{w}")
         print(f"{y}-{w}"*50)
-        print(f"{g}{b64_url}{w}")
+        print(f"{w}{api_url}{w}")
         print(f"{y}-{w}"*50)
-        print()
+        
+        b64_url = base64.b64encode(api_url.encode()).decode()
+        print(f"\n{c}[*] Script ထဲထည့်ရန် API Base64 Code:{w}")
+        print(f"{g}{b64_url}{w}\n")
     else:
         print(f"\n{r}[❌] Portal URL ကို ဖမ်းမမိပါ။ အင်တာနက် ပွင့်နေသလား ပြန်စစ်ပါ။{w}")
 
